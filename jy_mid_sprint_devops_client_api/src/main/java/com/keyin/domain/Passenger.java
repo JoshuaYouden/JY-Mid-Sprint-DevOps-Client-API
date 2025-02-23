@@ -1,3 +1,4 @@
 package com.keyin.domain;
 
-public class Passenger {}
+public class Passenger {
+}
