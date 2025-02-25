@@ -1,6 +1,9 @@
 package com.keyin.http.cli;
 
 import com.keyin.domain.Airport;
+import com.keyin.domain.Aircraft;
+import com.keyin.domain.Cities;
+import com.keyin.domain.Passenger;
 import com.keyin.http.client.RESTClient;
 
 import java.util.List;
@@ -19,6 +22,72 @@ public class HTTPRestCLIApplication {
             report.append(airport.getCode());
 
             if (airports.indexOf(airport) != (airports.size() - 1)) {
+                report.append(",");
+            }
+        }
+
+        System.out.println(report.toString());
+
+        return report.toString();
+    }
+
+    public String generateAircraftReport() {
+        List<Aircraft> aircrafts = getRestClient().getAllAircraft();
+
+        StringBuffer report = new StringBuffer();
+
+        for (Aircraft aircraft : aircrafts) {
+            report.append(aircraft.getType());
+            report.append(" - ");
+            report.append(aircraft.getAirlineName());
+            report.append(" - ");
+            report.append(aircraft.getNumberOfPassengers());
+
+            if (aircraft.indexOf(aircraft) != (aircrafts.size() - 1)) {
+                report.append(",");
+            }
+    }
+
+        System.out.println(report.toString());
+
+        return report.toString();
+    }
+
+    public String generatePassengerReport() {
+        List<Passenger> passengers = getRestClient().getAllPassengers();
+
+        StringBuffer report = new StringBuffer();
+
+        for (Passenger passenger : passengers) {
+            report.append(passenger.getFirstName());
+            report.append(" - ");
+            report.append(passenger.getLastName());
+            report.append(" - ");
+            report.append(passenger.getPhoneNumber());
+
+            if (passengers.indexOf(passenger) != (passengers.size() - 1)) {
+                report.append(",");
+            }
+        }
+
+        System.out.println(report.toString());
+
+        return report.toString();
+    }
+
+    public String generateCitiesReport() {
+        List<Cities> cities = getRestClient().getAllCities();
+
+        StringBuffer report = new StringBuffer();
+
+        for (Cities city : cities) {
+            report.append(city.getName());
+            report.append(" - ");
+            report.append(city.getState());
+            report.append(" - ");
+            report.append(city.getPopulation());
+
+            if (cities.indexOf(city) != (cities.size() - 1)) {
                 report.append(",");
             }
         }
@@ -64,6 +133,9 @@ public class HTTPRestCLIApplication {
                 cliApp.listGreetings();
             } else {
                 cliApp.generateAirportReport();
+                cliApp.generateAircraftReport();
+                cliApp.generatePassengerReport();
+                cliApp.generateCitiesReport();
             }
         }
 
