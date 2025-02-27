@@ -8,6 +8,19 @@ public class Cities {
     private String state;
     private int population;
 
+    public Cities() {}
+
+    public Cities(String name) {
+        this.name = name;
+    }
+
+    public Cities(long id, String name, String state, int population) {
+        this.id = id;
+        this.name = name;
+        this.state = state;
+        this.population = population;
+    }
+
     public long getId() {
         return id;
     }

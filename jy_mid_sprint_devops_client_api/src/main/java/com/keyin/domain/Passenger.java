@@ -9,6 +9,19 @@ public class Passenger {
     private String lastName;
     private String phoneNumber;
 
+    public Passenger() {}
+
+    public Passenger(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public Passenger(long id, String firstName, String lastName, String phoneNumber) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+    }
+
     public long getId() {
         return id;
     }

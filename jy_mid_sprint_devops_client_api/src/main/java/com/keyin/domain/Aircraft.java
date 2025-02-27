@@ -8,6 +8,19 @@ public class Aircraft {
     private String airlineName;
     private int numberOfPassengers;
 
+    public Aircraft() {}
+
+    public Aircraft(String type) {
+        this.type = type;
+    }
+
+    public Aircraft(long id, String type, String airlineName, int numberOfPassengers) {
+        this.id = id;
+        this.type = type;
+        this.airlineName = airlineName;
+        this.numberOfPassengers = numberOfPassengers;
+    }
+
     public long getId() {
         return id;
     }
