@@ -46,9 +46,9 @@ public class HTTPRestCLIApplicationTest {
         HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
 
         Aircraft spiritAircraft = new Aircraft();
-        spiritAircraft.setType = "A319";
-        spiritAircraft.setAirlineName = "Spirit";
-        spiritAircraft.numberOfPassengers = 25;
+        spiritAircraft.setType("A319");
+        spiritAircraft.setAirlineName("Spirit");
+        spiritAircraft.setNumberOfPassengers(25);
 
         List<Aircraft> aircraftList = new ArrayList<Aircraft>();
         aircraftList.add(spiritAircraft);
@@ -65,9 +65,9 @@ public class HTTPRestCLIApplicationTest {
         HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
 
         Passenger passenger = new Passenger();
-        passenger.setFirstName = "John";
-        passenger.setLastName = "Doe";
-        passenger.setPhoneNumber = "123-456-7890";
+        passenger.setFirstName("John");
+        passenger.setLastName("Doe");
+        passenger.setPhoneNumber("123-456-7890");
 
         List<Passenger> passengerList = new ArrayList<Passenger>();
         passengerList.add(passenger);
@@ -84,9 +84,9 @@ public class HTTPRestCLIApplicationTest {
         HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
 
         Cities cities = new Cities();
-        cities.setCityName = "St. John's";
-        cities.setStateName = "Newfoundland and Labrador";
-        cities.setPopulation = 100000;
+        cities.setName("St. John's");
+        cities.setState("Newfoundland and Labrador");
+        cities.setPopulation(100000);
 
         List<Cities> citiesList = new ArrayList<Cities>();
         citiesList.add(cities);

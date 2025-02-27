@@ -1,14 +1,15 @@
 package com.keyin.client;
 
-import com.keyin.domain.Airport;
-import com.keyin.domain.Aircraft;
-import com.keyin.domain.Cities;
-import com.keyin.domain.Passenger;
-import com.keyin.http.client.RESTClient;
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import com.keyin.domain.Aircraft;
+import com.keyin.domain.Airport;
+import com.keyin.domain.Cities;
+import com.keyin.domain.Passenger;
+import com.keyin.http.client.RESTClient;
 
 public class RESTClientTest {
     @Test
@@ -60,7 +61,7 @@ public class RESTClientTest {
 
         RESTClient restClientUnderTest = new RESTClient();
 
-        List<Cities> citiesList = restClientUnderTest.buildCitiesListFromResponse(jsonResponse);
+        List<Cities> citiesList = restClientUnderTest.buildCityListFromResponse(jsonResponse);
 
         Assertions.assertTrue(citiesList.contains(new Cities("St. John's")));
 
