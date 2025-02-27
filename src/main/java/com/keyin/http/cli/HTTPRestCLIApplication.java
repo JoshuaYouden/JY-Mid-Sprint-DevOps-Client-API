@@ -120,7 +120,7 @@ public class HTTPRestCLIApplication {
 
         HTTPRestCLIApplication cliApp = new HTTPRestCLIApplication();
 
-        String serverURL = "http://localhost:8080/airports";
+        String serverURL = "http://localhost:8080/api/aircrafts";
 
         if (serverURL != null && !serverURL.isEmpty()) {
 
@@ -132,10 +132,12 @@ public class HTTPRestCLIApplication {
             if (serverURL.contains("greeting")) {
                 cliApp.listGreetings();
             } else {
-                cliApp.generateAirportReport();
+                // Comment out the reports you don't need!
+
+                // cliApp.generateAirportReport();
                 cliApp.generateAircraftReport();
-                cliApp.generatePassengerReport();
-                cliApp.generateCitiesReport();
+            //     cliApp.generatePassengerReport();
+            //     cliApp.generateCitiesReport();
             }
         }
 
