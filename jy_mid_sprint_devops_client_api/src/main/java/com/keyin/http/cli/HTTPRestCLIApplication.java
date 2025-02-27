@@ -1,12 +1,12 @@
 package com.keyin.http.cli;
 
-import com.keyin.domain.Airport;
+import java.util.List;
+
 import com.keyin.domain.Aircraft;
+import com.keyin.domain.Airport;
 import com.keyin.domain.Cities;
 import com.keyin.domain.Passenger;
 import com.keyin.http.client.RESTClient;
-
-import java.util.List;
 
 public class HTTPRestCLIApplication {
     private RESTClient restClient;
@@ -43,7 +43,7 @@ public class HTTPRestCLIApplication {
             report.append(" - ");
             report.append(aircraft.getNumberOfPassengers());
 
-            if (aircraft.indexOf(aircraft) != (aircrafts.size() - 1)) {
+            if (aircrafts.indexOf(aircraft) != (aircrafts.size() - 1)) {
                 report.append(",");
             }
     }
@@ -120,7 +120,7 @@ public class HTTPRestCLIApplication {
 
         HTTPRestCLIApplication cliApp = new HTTPRestCLIApplication();
 
-        String serverURL = args[0];
+        String serverURL = "http://localhost:8080/airports";
 
         if (serverURL != null && !serverURL.isEmpty()) {
 
